@@ -1,11 +1,11 @@
 import { getDuplicatesRefinement } from 'libs/utils/zod'
 import { z } from 'zod'
 import { IdSchema } from '../../generic/models/Id'
-import { SocialChannelSchema } from '../../social/models/SocialChannel'
+import { SocialChannelsSchema } from '../../social/models/SocialChannel'
 
 export const InfluencerSchema = z.object({
   id: IdSchema,
-  channels: z.array(SocialChannelSchema),
+  channels: SocialChannelsSchema,
 }).describe('Influencer')
 
 export const InfluencersSchema = z.array(InfluencerSchema)
